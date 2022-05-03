@@ -15,12 +15,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        initDirectory();
-        UserService.initDatabase();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
-        primaryStage.setTitle("Registration Example");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+        try {
+            initDirectory();
+            UserService.initDatabase();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("starter.fxml"));
+            primaryStage.setTitle("Aplicatie - Comercializare Masini");
+            primaryStage.setScene(new Scene(root));
+            primaryStage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void initDirectory() {
