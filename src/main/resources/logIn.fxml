@@ -25,15 +25,20 @@
 
     <PasswordField fx:id="passwordField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 
-    <Text fx:id="logInMessage" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-     <Button onAction="#handleRegisterAction" text="Log In" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+    <Text fx:id="logInMessage" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+     <Button onAction="#handleLogInAction" text="Log In" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+   <Label text="dont have an account? press on register button" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+   <Button mnemonicParsing="false" onAction="#handleRegisterAction" text="Register" GridPane.columnIndex="2" GridPane.rowIndex="11" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />

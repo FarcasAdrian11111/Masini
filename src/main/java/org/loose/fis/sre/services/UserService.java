@@ -28,8 +28,7 @@ public class UserService {
     //log in method
     public static User logInDB(String username, String password) throws InvalidCredentialException{
         for(User user : userRepository.find()){
-            /*System.out.println(user.getUsername()+"        "+ user.getPassword());*/
-            if(Objects.equals(username, user.getUsername()) /*&& Objects.equals(password, user.getPassword())*/){
+            if(Objects.equals(username, user.getUsername()) && Objects.equals(encodePassword(username, password), user.getPassword())){
                 return user;
             }
         }
