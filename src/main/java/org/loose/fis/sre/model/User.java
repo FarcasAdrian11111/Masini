@@ -7,11 +7,15 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private String phoneNumber;
+    private String email;
 
-    public User(String username, String password, String role) {
+    public User(String username, String password, String role, String phoneNumber, String email) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.phoneNumber=phoneNumber;
+        this.email=email;
     }
 
     public User() {
@@ -40,6 +44,14 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public String getPhoneNumber() {return phoneNumber;}
+
+    public void setPhoneNumber(String phoneNumber) {this.phoneNumber=phoneNumber;}
+
+    public String getEmail(){return email;}
+
+    public void setEmail(String email){this.email=email;}
 
     @Override
     public boolean equals(Object o) {
