@@ -3,6 +3,7 @@ package org.loose.fis.sre.services;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.exceptions.InvalidCredentialException;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -22,6 +23,17 @@ public class UserService {
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
+    }
+
+    //log in method
+    public static User logInDB(String username, String password) throws InvalidCredentialException{
+        for(User user : userRepository.find()){
+            /*System.out.println(user.getUsername()+"        "+ user.getPassword());*/
+            if(Objects.equals(username, user.getUsername()) /*&& Objects.equals(password, user.getPassword())*/){
+                return user;
+            }
+        }
+        throw new InvalidCredentialException();
     }
 
     public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
