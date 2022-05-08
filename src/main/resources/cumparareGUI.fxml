@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.cumparareGUIController">
+   <children>
+      <ListView fx:id="myListView" layoutX="183.0" layoutY="150.0" prefHeight="200.0" prefWidth="303.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="244.0" AnchorPane.topAnchor="150.0" />
+      <TextField fx:id="textFieldMarca" layoutX="61.0" layoutY="50.0" />
+      <TextField fx:id="textFieldOferta" layoutX="512.0" layoutY="50.0" />
+      <Button fx:id="butonInterese" layoutX="30.0" layoutY="188.0" mnemonicParsing="false" text="interese" />
+      <Text layoutX="165.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mașini-liste selectie pentru adaugare in lista de preferinte" />
+      <Text layoutX="14.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introduce marca si apasa cautare pentru cautare" />
+      <Text layoutX="444.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introduce marca si apasa oferte pentru oferte " />
+      <Button fx:id="butonCautare" layoutX="53.0" layoutY="121.0" mnemonicParsing="false" text="Cautare" />
+      <Button fx:id="butonOferte" layoutX="599.0" layoutY="128.0" mnemonicParsing="false" text="Oferte" />
+      <Button fx:id="butonMesaje" layoutX="588.0" layoutY="200.0" mnemonicParsing="false" text="mesaje " />
+      <Button fx:id="butonIstoric" layoutX="592.0" layoutY="298.0" mnemonicParsing="false" text="Istoric" />
+   </children>
+</AnchorPane>
