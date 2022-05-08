@@ -35,13 +35,22 @@ public class logInController {
     private Parent root;
 
     @FXML
-    public void handleLogInAction() {
+    public void handleLogInAction(ActionEvent e) throws IOException {
         try {
-            User user;
+            User user=null;
             user=UserService.logInDB(usernameField.getText(), passwordField.getText());
-            logInMessage.setText("You have succesfully logged in!");
-        } catch (InvalidCredentialException e) {
-            logInMessage.setText(e.getMessage());
+            if(user.getRole().equals("Cumparator")){
+                root = FXMLLoader.load(getClass().getClassLoader().getResource("cumparareGUI.fxml"));
+                stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+            else{
+                logInMessage.setText("vanzareGUI placeholder!");
+            }
+        } catch (InvalidCredentialException ex) {
+            logInMessage.setText(ex.getMessage());
         }
     }
 
