@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
@@ -15,9 +16,10 @@
       <Text layoutX="165.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mașini-liste selectie pentru adaugare in lista de preferinte" />
       <Text layoutX="14.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introduce marca si apasa cautare pentru cautare" />
       <Text layoutX="444.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introduce marca si apasa oferte pentru oferte " />
-      <Button fx:id="butonCautare" layoutX="53.0" layoutY="121.0" mnemonicParsing="false" text="Cautare" />
-      <Button fx:id="butonOferte" layoutX="599.0" layoutY="128.0" mnemonicParsing="false" text="Oferte" />
+      <Button fx:id="butonCautare" layoutX="53.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleCautareAction" text="Cautare" />
+      <Button fx:id="butonOferte" layoutX="599.0" layoutY="128.0" mnemonicParsing="false" onAction="#handleOferteAction" text="Oferte" />
       <Button fx:id="butonMesaje" layoutX="588.0" layoutY="200.0" mnemonicParsing="false" text="mesaje " />
       <Button fx:id="butonIstoric" layoutX="592.0" layoutY="298.0" mnemonicParsing="false" text="Istoric" />
+      <ImageView fx:id="imagine" fitHeight="150.0" fitWidth="140.0" layoutX="14.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

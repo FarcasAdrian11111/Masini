@@ -18,7 +18,7 @@ public class Main extends Application {
         try {
             initDirectory();
             UserService.initDatabase();
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("logIn.fxml"));
             primaryStage.setTitle("Aplicatie - Comercializare Masini");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
