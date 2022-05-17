@@ -89,6 +89,6 @@ public class cumparareGUIController implements Initializable {
         myImages[4] = new Image(getClass().getClassLoader().getResource("fiat.jpg").toString(), true);
         myImages[5] = new Image(getClass().getClassLoader().getResource("bmw.jpg").toString(), true);
         myImages[6] = new Image(getClass().getClassLoader().getResource("volkswagen.jpg").toString(), true);
-        imagine.setImage(myImages[1]);
+        imagine.setImage(myImages[0]);
     }
 }
