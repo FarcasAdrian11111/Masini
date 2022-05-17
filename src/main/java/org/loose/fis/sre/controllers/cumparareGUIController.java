@@ -12,6 +12,8 @@ import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.exceptions.InvalidCredentialException;
 import org.loose.fis.sre.services.MasinaService;
 import org.loose.fis.sre.model.Masina;
+import org.loose.fis.sre.services.CumparatorService;
+import org.loose.fis.sre.model.Cumparator;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -58,6 +60,11 @@ public class cumparareGUIController implements Initializable {
     @FXML
     private ImageView imagine;
 
+    private Cumparator buyer;
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -66,7 +73,14 @@ public class cumparareGUIController implements Initializable {
         //MasinaService.initializare();
         ArrayList<String> car = MasinaService.returnareObiecte();
         myListView.getItems().addAll(car);
-
+        //functie care adauga in preferinte
+        myListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                buyer.addInPreferinte((String)myListView.getSelectionModel().getSelectedItem());
+            }
+        });
+        //imagini
         Image[] myImages = new Image[7];
         myImages[0] = new Image(getClass().getClassLoader().getResource("honda.jpg").toString(), true);
         myImages[1] = new Image(getClass().getClassLoader().getResource("ford.jpg").toString(), true);
@@ -75,7 +89,12 @@ public class cumparareGUIController implements Initializable {
         myImages[4] = new Image(getClass().getClassLoader().getResource("fiat.jpg").toString(), true);
         myImages[5] = new Image(getClass().getClassLoader().getResource("bmw.jpg").toString(), true);
         myImages[6] = new Image(getClass().getClassLoader().getResource("volkswagen.jpg").toString(), true);
-        imagine.setImage(myImages[0]);
+        imagine.setImage(myImages[1]);
+    }
+
+
+    public void getBuyer(Cumparator buyer){
+        this.buyer=buyer;
     }
 
     public void handleCautareAction(){
@@ -83,4 +102,3 @@ public class cumparareGUIController implements Initializable {
         myListView.getItems().clear();
         myListView.getItems().addAll(car);
     }
-}
