@@ -90,5 +90,4 @@ public class cumparareGUIController implements Initializable {
         myListView.getItems().addAll(car);
     }
 
-
 }
