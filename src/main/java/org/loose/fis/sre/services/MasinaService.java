@@ -5,6 +5,7 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.exceptions.InvalidCredentialException;
 import org.loose.fis.sre.model.Masina;
+import org.loose.fis.sre.model.Cumparator;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -13,8 +14,6 @@ import java.util.Objects;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
-import static org.loose.fis.sre.services.FileSystemService.getPathToFile2;
 
 public class MasinaService {
 
@@ -29,10 +28,35 @@ public class MasinaService {
     }
 
     /*public static void initializare(){
-        masinaRepository.insert(new Masina("rac", 1, 2, 3, "bac"));
-        masinaRepository.insert(new Masina("dac", 4, 5, 6, "bac"));
-        masinaRepository.insert(new Masina("vrac", 7, 8, 9, "car"));
+        Cumparator unu = new Cumparator("unu", new ArrayList<String>(), new ArrayList<Masina>(), new ArrayList<String>());
+        Cumparator doi = new Cumparator("doi", new ArrayList<String>(), new ArrayList<Masina>(), new ArrayList<String>());
+        Cumparator trei = new Cumparator("trei", new ArrayList<String>(), new ArrayList<Masina>(), new ArrayList<String>());
+        masinaRepository.insert(new Masina("rac", 1, 2, 3, "bac"/*, true, new cumparatorPret(unu, -1)*//*));
+        masinaRepository.insert(new Masina("dac", 4, 5, 6, "bac"/*, true, new cumparatorPret(doi, -2)*//*));
+        masinaRepository.insert(new Masina("vrac", 7, 8, 9, "car"/*, true, new cumparatorPret(trei, -3)*//*));
     }*/
+
+    public static void inserare(Masina aux){
+        masinaRepository.insert(aux);
+    }
+
+    /*public static void returnareMasinaVanzator(String marca, String vanzator){
+        ArrayList<Masina> masini = new Arraylist<>();
+        (Masina car : masinaRepository.find()){
+            if(car.getMarca().equals(marca) && car.getVanzator().equals(vanzator))
+            return car;
+        }
+        return masini;
+    }*/
+
+    public static void stergeMasina(String marca, String vanzator){
+        for(Masina car : masinaRepository.find()){
+            if(car.getMarca().equals(marca) && car.getVanzator().equals(vanzator)){
+                masinaRepository.remove(car);
+                break;
+            }
+        }
+    }
 
     public static ArrayList<String> returnareObiecte(){
         ArrayList<String> masini = new ArrayList<>();

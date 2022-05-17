@@ -17,6 +17,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import org.loose.fis.sre.model.Cumparator;
+import org.loose.fis.sre.model.Vanzator;
+import org.loose.fis.sre.services.CumparatorService;
+import org.loose.fis.sre.services.VanzatorService;
+
 public class logInController {
     @FXML
     private Text logInMessage;
@@ -40,14 +45,26 @@ public class logInController {
             User user=null;
             user=UserService.logInDB(usernameField.getText(), passwordField.getText());
             if(user.getRole().equals("Cumparator")){
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("cumparareGUI.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cumparareGUI.fxml"));
+                root = loader.load();
+                cumparareGUIController cgc = loader.getController();
+                CumparatorService.initDatabase();
+                cgc.getBuyer(CumparatorService.getCumparator(usernameField.getText()));
                 stage = (Stage)((Node)e.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
             }
             else{
-                logInMessage.setText("vanzareGUI placeholder!");
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("vanzareGUI.fxml"));
+                root = loader.load();
+                vanzareGUIController vgc = loader.getController();
+                VanzatorService.initDatabase();
+                vgc.getSeller(VanzatorService.getVanzator(usernameField.getText()));
+                stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
             }
         } catch (InvalidCredentialException ex) {
             logInMessage.setText(ex.getMessage());
