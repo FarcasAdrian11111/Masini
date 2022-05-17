@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.vanzareGUIController">
+   <children>
+      <Button fx:id="adaugaB" layoutX="258.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleAdaugaB" text="Adauga Produs" />
+      <Button fx:id="modificaB" layoutX="256.0" layoutY="151.0" mnemonicParsing="false" onAction="#handleModificaB" text="Modifica Produs" />
+      <Button fx:id="indisponibilB" layoutX="231.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleIndisponibilB" text="Fa Un Produs Indisponibil" />
+      <Button fx:id="istoricB" layoutX="506.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleIstoricB" text="Istoric" />
+      <TextField fx:id="marcaT" layoutX="30.0" layoutY="139.0" />
+      <Label layoutX="16.0" layoutY="168.0" text="Introduceti marca masinii cautate" />
+      <Button fx:id="marcaB" layoutX="17.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleMarcaB" text="Clienti pentru marca introdusa" />
+      <Label layoutX="144.0" layoutY="101.0" text="La adaugare, marcile trebuie sa fie diferite la fiecare masina" />
+   </children>
+</AnchorPane>
