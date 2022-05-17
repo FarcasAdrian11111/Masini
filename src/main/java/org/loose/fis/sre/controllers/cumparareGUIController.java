@@ -77,4 +77,10 @@ public class cumparareGUIController implements Initializable {
         myImages[6] = new Image(getClass().getClassLoader().getResource("volkswagen.jpg").toString(), true);
         imagine.setImage(myImages[0]);
     }
+
+    public void handleCautareAction(){
+        ArrayList<String> car = MasinaService.returnareObiecteMarca(textFieldMarca.getText());
+        myListView.getItems().clear();
+        myListView.getItems().addAll(car);
+    }
 }
