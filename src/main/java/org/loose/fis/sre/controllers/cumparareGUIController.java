@@ -119,15 +119,4 @@ public class cumparareGUIController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-    public void handleMesajeAction(ActionEvent e) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("listaGui.fxml"));
-        root = loader.load();
-        listaGuiController lgc = loader.getController();
-        lgc.transferMesaje(buyer.getMesaje());
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 }
