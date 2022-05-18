@@ -109,6 +109,17 @@ public class cumparareGUIController implements Initializable {
         myListView.getItems().addAll(car);
     }
 
+    public void handlePreferinteAction(ActionEvent e) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("preferinteGUI.fxml"));
+        root = loader.load();
+        preferinteGUIController pgc = loader.getController();
+        pgc.getBuyerT(this.buyer);
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void handleIstoricAction(ActionEvent e) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("listaGui.fxml"));
         root = loader.load();
