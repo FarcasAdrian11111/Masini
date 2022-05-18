@@ -77,7 +77,7 @@ public class cumparareGUIController implements Initializable {
         myListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                buyer.addInPreferinte((String)myListView.getSelectionModel().getSelectedItem());
+                buyer.addInPreferinte((String) myListView.getSelectionModel().getSelectedItem());
             }
         });
         //imagini
@@ -93,12 +93,19 @@ public class cumparareGUIController implements Initializable {
     }
 
 
-    public void getBuyer(Cumparator buyer){
-        this.buyer=buyer;
+    public void getBuyer(Cumparator buyer) {
+        this.buyer = buyer;
     }
 
-    public void handleCautareAction(){
+    public void handleCautareAction() {
         ArrayList<String> car = MasinaService.returnareObiecteMarca(textFieldMarca.getText());
         myListView.getItems().clear();
         myListView.getItems().addAll(car);
     }
+
+    public void handleOferteAction(){
+        ArrayList<String> car = MasinaService.returnareObiecteOferte(textFieldOferta.getText());
+        myListView.getItems().clear();
+        myListView.getItems().addAll(car);
+    }
+}
