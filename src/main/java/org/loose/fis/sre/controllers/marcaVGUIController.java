@@ -85,7 +85,6 @@ public class marcaVGUIController implements Initializable {
                 }*/
 
         });
-}
     }
 
     public void handleGolireB(ActionEvent e) throws IOException{
