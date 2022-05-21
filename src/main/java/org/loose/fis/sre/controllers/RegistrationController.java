@@ -11,10 +11,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.services.UserService;
+import org.loose.fis.sre.services.CumparatorService;
+import org.loose.fis.sre.services.VanzatorService;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import org.loose.fis.sre.model.Masina;
+import org.loose.fis.sre.model.mdc;
 
 public class RegistrationController {
 
@@ -45,6 +51,14 @@ public class RegistrationController {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue(), phoneNumberField.getText(), emailField.getText());
             registrationMessage.setText("Account created successfully!");
+            if(((String) role.getValue()).equals("Cumparator")){
+                CumparatorService.initDatabase();
+                CumparatorService.addCumparator(usernameField.getText(), new ArrayList<String>(), new ArrayList<Masina>(), new ArrayList<String>());
+            }
+            else{
+                VanzatorService.initDatabase();
+                VanzatorService.addVanzator(usernameField.getText(), new ArrayList<mdc>(), new ArrayList<String>());
+            }
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }
