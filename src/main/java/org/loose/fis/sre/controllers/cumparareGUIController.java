@@ -1,6 +1,7 @@
 package org.loose.fis.sre.controllers;
 
 import java.io.IOException;
+import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -65,22 +66,14 @@ public class cumparareGUIController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private int var; //variabilele globale pot fi apelate dintr-un inner class cum e changeListener din ListView
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         //initDirectory();
-        MasinaService.initDatabase();
-        //MasinaService.initializare();
-        ArrayList<String> car = MasinaService.returnareObiecte();
-        myListView.getItems().addAll(car);
-        //functie care adauga in preferinte
-        myListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                buyer.addInPreferinte((String) myListView.getSelectionModel().getSelectedItem());
-            }
-        });
         //imagini
+        var=changeImage(-1);
+        /*int i=0;
         Image[] myImages = new Image[7];
         myImages[0] = new Image(getClass().getClassLoader().getResource("honda.jpg").toString(), true);
         myImages[1] = new Image(getClass().getClassLoader().getResource("ford.jpg").toString(), true);
@@ -89,15 +82,44 @@ public class cumparareGUIController implements Initializable {
         myImages[4] = new Image(getClass().getClassLoader().getResource("fiat.jpg").toString(), true);
         myImages[5] = new Image(getClass().getClassLoader().getResource("bmw.jpg").toString(), true);
         myImages[6] = new Image(getClass().getClassLoader().getResource("volkswagen.jpg").toString(), true);
-        imagine.setImage(myImages[1]);
+        imagine.setImage(myImages[i]);*/
+        MasinaService.initDatabase();
+        //MasinaService.initializare();
+        ArrayList<String> car = MasinaService.returnareObiecte();
+        myListView.getItems().addAll(car);
+        //functie care adauga in preferinte
+        myListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                var=changeImage(var);
+                buyer.addInPreferinte((String)myListView.getSelectionModel().getSelectedItem());
+            }
+        });
     }
 
-
-    public void getBuyer(Cumparator buyer) {
-        this.buyer = buyer;
+    public int changeImage(int past){
+        Image[] myImages = new Image[7];
+        Random random = new Random();
+        myImages[0] = new Image(getClass().getClassLoader().getResource("honda.jpg").toString(), true);
+        myImages[1] = new Image(getClass().getClassLoader().getResource("ford.jpg").toString(), true);
+        myImages[2] = new Image(getClass().getClassLoader().getResource("nissan.jpg").toString(), true);
+        myImages[3] = new Image(getClass().getClassLoader().getResource("suzuki.jpg").toString(), true);
+        myImages[4] = new Image(getClass().getClassLoader().getResource("fiat.jpg").toString(), true);
+        myImages[5] = new Image(getClass().getClassLoader().getResource("bmw.jpg").toString(), true);
+        myImages[6] = new Image(getClass().getClassLoader().getResource("volkswagen.jpg").toString(), true);
+        int present;
+        do{
+            present=random.nextInt(7);
+        }while(present==past);
+        imagine.setImage(myImages[present]);
+        return present;
     }
 
-    public void handleCautareAction() {
+    public void getBuyer(Cumparator buyer){
+        this.buyer=buyer;
+    }
+
+    public void handleCautareAction(){
         ArrayList<String> car = MasinaService.returnareObiecteMarca(textFieldMarca.getText());
         myListView.getItems().clear();
         myListView.getItems().addAll(car);
