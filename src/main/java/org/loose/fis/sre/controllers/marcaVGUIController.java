@@ -72,10 +72,10 @@ public class marcaVGUIController implements Initializable {
                 }
                 for(Cumparator buyer : seller.getObjw().get(j).getBuyers()){
                     if(buyer.getNume().equals(sequence[3])==false){
-                        buyer.addInMesaje("Vi s-a refuzat oferta/ofertele de catre " + seller.getNume()/*+ " pentru masina cu marca " + this.marca + "!"*/);
+                        buyer.addInMesaje("Vi s-a refuzat oferta/ofertele de catre " + seller.getNume()/*+ " pentru masina cu marca " + this.marca + "!"*//*);*/
                     }
                     /*else{
-                        buyer.addInMesaje("Vi s-a acceptat oferta in valoare de: " + sequence[1]+ " de catre " + seller.getNume()/*+ " pentru masina cu marca " + this.marca + "!"*/);
+                        buyer.addInMesaje("Vi s-a acceptat oferta in valoare de: " + sequence[1]+ " de catre " + seller.getNume()/*+ " pentru masina cu marca " + this.marca + "!"*//*);*/
                         //seller.getVandute().add("Masina cu marca "+this.marca+" a fost vanduta cumparatorului: " + buyer.getNume());*/
                         /*seller.getVandute().add("Masina a fost vanduta cumparatorului: " + buyer.getNume());
                         myListView.getItems().clear();
@@ -83,8 +83,9 @@ public class marcaVGUIController implements Initializable {
                         VanzatorService.updateazaDB_Objw(seller);
                     }
                 }*/
-            }
+
         });
+}
     }
 
     public void handleGolireB(ActionEvent e) throws IOException{
