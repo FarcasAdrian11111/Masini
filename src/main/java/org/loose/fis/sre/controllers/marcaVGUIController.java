@@ -88,7 +88,20 @@ public class marcaVGUIController implements Initializable {
     }
 
     public void handleGolireB(ActionEvent e) throws IOException{
-    /**/
+        myListView.getItems().clear();
+        int j=-1;
+        for(mdc mdcs : seller.getObjw()){
+            j++;
+            if(mdcs.getMasina().getMarca().equals(this.marca))
+                break;
+        }
+        for(Cumparator buyer : seller.getObjw().get(j).getBuyers()){
+            buyer.addInMesaje("Vi s-a refuzat oferta/ofertele de catre " + seller.getNume()+ " pentru masina cu marca " + this.marca + "!");
+            //nu scoate masina din preferinte pentru ca cumparatorul poate avea mai multe preferinte
+            //va trebui sters si toate ofertele din DB in care se vor memora preturile date de cumparator
+        }
+        seller.getObjw().get(i).setBuyers(new ArrayList<Cumparator>());
+        VanzatorService.updateazaDB_Objw(seller);
     }
 
     public void getSeller(Vanzator seller){
