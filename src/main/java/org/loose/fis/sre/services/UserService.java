@@ -13,6 +13,8 @@ import java.util.Objects;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
+import java.util.List;
+
 public class UserService {
 
     private static ObjectRepository<User> userRepository;
@@ -68,5 +70,7 @@ public class UserService {
         return md;
     }
 
-
+    public static List<User> getAllUsers(){
+        return userRepository.find().toList();
+    }
 }

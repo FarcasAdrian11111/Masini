@@ -97,6 +97,14 @@ public class vanzareGUIController /*implements Initializable*/ {
     }
 
     public void handleIstoricB(ActionEvent e) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("istoricGUI.fxml"));
+        root = loader.load();
+        istoricGUIController lgc = loader.getController();
+        lgc.transferMasini(seller.getVandute());
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

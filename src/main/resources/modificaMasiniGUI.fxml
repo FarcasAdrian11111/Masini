@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.modificaMasinaGUIController">
+    <children>
+        <TextField fx:id="tf" layoutX="118.0" layoutY="112.0" />
+        <Label layoutX="14.0" layoutY="146.0" text="Introduce marca masinii pentru care vrei sa faci modificari" />
+        <Label layoutX="112.0" layoutY="242.0" text="Ea va fi stearsa si poti introduce o alta masina cu aceeasi marca" />
+        <Button fx:id="modificaB" layoutX="259.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleModificaB" text="modifica" />
+    </children>
+</AnchorPane>

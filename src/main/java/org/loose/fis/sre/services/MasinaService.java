@@ -13,8 +13,7 @@ import java.util.Objects;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
-import static org.loose.fis.sre.services.FileSystemService.getPathToFile2;
+import java.util.List;
 
 public class MasinaService {
 
@@ -61,5 +60,21 @@ public class MasinaService {
         }
         Collections.sort(masini);
         return masini;
+    }
+
+    public static void inserare(Masina aux){
+        masinaRepository.insert(aux);
+    }
+    public static void stergeMasina(String marca, String vanzator){
+        for(Masina car : masinaRepository.find()){
+            if(car.getMarca().equals(marca) && car.getVanzator().equals(vanzator)){
+                masinaRepository.remove(car);
+                break;
+            }
+        }
+    }
+
+    public static List<Masina> getAllCars(){
+        return masinaRepository.find().toList();
     }
 }

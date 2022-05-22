@@ -61,7 +61,7 @@ public class modificaMasinaGUIController /*implements Initializable*/ {
         }
         seller.getObjw().remove(i);
         VanzatorService.updateazaDB_Objw(seller);
-        MasinaService.initDatabase();
+        //MasinaService.initDatabase();
         MasinaService.stergeMasina(tf.getText(), seller.getNume());
     }
 
