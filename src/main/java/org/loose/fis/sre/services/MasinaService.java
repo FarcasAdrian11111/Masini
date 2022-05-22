@@ -62,4 +62,16 @@ public class MasinaService {
         Collections.sort(masini);
         return masini;
     }
+
+    public static void inserare(Masina aux){
+        masinaRepository.insert(aux);
+    }
+    public static void stergeMasina(String marca, String vanzator){
+        for(Masina car : masinaRepository.find()){
+            if(car.getMarca().equals(marca) && car.getVanzator().equals(vanzator)){
+                masinaRepository.remove(car);
+                break;
+            }
+        }
+    }
 }
