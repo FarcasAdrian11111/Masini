@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.istoricGUIController">
    <children>
-      <ListView layoutX="172.0" layoutY="110.0" prefHeight="200.0" prefWidth="236.0" />
-      <Text layoutX="199.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Istoricul masinilor incarcate pe site" />
+      <ListView fx:id="myListView" layoutX="172.0" layoutY="110.0" prefHeight="200.0" prefWidth="236.0" />
+      <Text fx:id="myText" layoutX="173.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Istoricul masinilor vandute de catre vanzator" />
    </children>
 </AnchorPane>

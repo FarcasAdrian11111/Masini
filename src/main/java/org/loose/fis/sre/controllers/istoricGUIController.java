@@ -24,14 +24,11 @@ public class istoricGUIController implements Initializable {
     private ArrayList<String> masini=null;
     private ArrayList<Integer> pret=null;
 
-    public istoricGUIController(ListView myListView, Text myText) {
-        this.myListView = myListView;
-        this.myText = myText;
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        myText.setText("Istoricul masinilor incarcate pe site");
+        //myText.setText("Istoricul masinilor incarcate pe site");
     }
 
     public void transferMasini(ArrayList<String> masini){
