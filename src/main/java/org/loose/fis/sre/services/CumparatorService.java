@@ -14,6 +14,7 @@ import java.util.Objects;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class CumparatorService {
     private static ObjectRepository<Cumparator> cumparatorRepository;
@@ -93,5 +94,9 @@ public class CumparatorService {
                 cumparatorRepository.update(buyer);
             }
         }
+    }
+
+    public static List<Cumparator> getAllBuyers(){
+        return cumparatorRepository.find().toList();
     }
 }

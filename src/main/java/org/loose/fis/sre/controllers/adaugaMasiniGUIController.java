@@ -59,7 +59,7 @@ public class adaugaMasiniGUIController /*implements Initializable*/ {
         Masina masina = new Masina(tf4.getText(), Integer.parseInt(tf1.getText()), Integer.parseInt(tf2.getText()), Integer.parseInt(tf3.getText()), this.seller.getNume());
         seller.getObjw().add(new mdc(masina, true, new ArrayList<Cumparator>()));
         VanzatorService.updateazaDB_Objw(seller);
-        MasinaService.initDatabase();
+        //MasinaService.initDatabase();
         MasinaService.inserare(masina);
     }
 

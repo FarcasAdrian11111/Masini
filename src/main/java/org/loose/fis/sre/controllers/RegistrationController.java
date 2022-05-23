@@ -52,11 +52,11 @@ public class RegistrationController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue(), phoneNumberField.getText(), emailField.getText());
             registrationMessage.setText("Account created successfully!");
             if(((String) role.getValue()).equals("Cumparator")){
-                CumparatorService.initDatabase();
+                //CumparatorService.initDatabase();
                 CumparatorService.addCumparator(usernameField.getText(), new ArrayList<String>(), new ArrayList<Masina>(), new ArrayList<String>());
             }
             else{
-                VanzatorService.initDatabase();
+                //VanzatorService.initDatabase();
                 VanzatorService.addVanzator(usernameField.getText(), new ArrayList<mdc>(), new ArrayList<String>());
             }
         } catch (UsernameAlreadyExistsException e) {

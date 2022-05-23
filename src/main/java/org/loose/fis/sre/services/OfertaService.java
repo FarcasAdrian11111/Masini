@@ -17,6 +17,7 @@ import java.util.Objects;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class OfertaService {
     private static ObjectRepository<Oferta> ofertaRepository;
@@ -51,6 +52,10 @@ public class OfertaService {
                 oferte.add("Oferta: "+ ofert.getOferta()+" "+ "Cumparator: "+ofert.getBuyer().getNume());
         }
         return oferte;
+    }
+
+    public static List<Oferta> getAllOffers(){
+        return ofertaRepository.find().toList();
     }
 }
 
