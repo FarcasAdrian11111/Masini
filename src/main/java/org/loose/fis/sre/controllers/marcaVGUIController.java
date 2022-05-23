@@ -128,7 +128,7 @@ public class marcaVGUIController implements Initializable {
         }*/
 
         //myListView.getItems().addAll(numeCump);
-        OfertaService.initDatabase();
+        //OfertaService.initDatabase();
         //System.out.println(seller.getNume());
 
 

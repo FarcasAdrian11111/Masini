@@ -75,7 +75,7 @@ public class preferinteGUIController implements Initializable {
                 String[] sequence = ((String)myListView.getSelectionModel().getSelectedItem()).split(" ");
                 String marca = sequence[1];
                 String vanzator = sequence[sequence.length - 1];
-                VanzatorService.initDatabase();//nu mai poti selecta mai multe oferte pentru ca baza de date e deschisa deja la selectia initiala;
+                //VanzatorService.initDatabase();//nu mai poti selecta mai multe oferte pentru ca baza de date e deschisa deja la selectia initiala;
                 Vanzator seller = VanzatorService.getVanzator(vanzator);
                 //System.out.println(seller.getNume());
                 //introducere in DB Oferte
@@ -89,7 +89,7 @@ public class preferinteGUIController implements Initializable {
                             if (mdc2.getDeVanzare()) {
                                 mdc2.getBuyers().add(CumparatorService.getCumparator(buyer.getNume()));
                                 VanzatorService.updateazaDB_Objw(seller);
-                                OfertaService.initDatabase();
+                                //OfertaService.initDatabase();
                                 System.out.println(buyer.getNume() + seller.getNume());
                                 OfertaService.insereaza(buyer, seller, Integer.parseInt(myTextField.getText()), marca);
                                 myText.setText("Ati introdus oferta!");

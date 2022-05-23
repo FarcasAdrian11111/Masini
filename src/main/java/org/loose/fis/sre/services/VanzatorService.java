@@ -16,6 +16,7 @@ import java.util.Objects;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class VanzatorService {
     private static ObjectRepository<Vanzator> vanzatorRepository;
@@ -60,5 +61,9 @@ public class VanzatorService {
                 vanzatorRepository.update(seller);
             }
         }
+    }
+
+    public static List<Vanzator> getAllSellers(){
+        return vanzatorRepository.find().toList();
     }
 }

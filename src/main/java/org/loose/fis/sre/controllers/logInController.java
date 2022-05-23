@@ -48,7 +48,7 @@ public class logInController {
                 FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cumparareGUI.fxml"));
                 root = loader.load();
                 cumparareGUIController cgc = loader.getController();
-                CumparatorService.initDatabase();
+                //CumparatorService.initDatabase();
                 cgc.getBuyer(CumparatorService.getCumparator(usernameField.getText()));
                 stage = (Stage)((Node)e.getSource()).getScene().getWindow();
                 scene = new Scene(root);
@@ -59,7 +59,7 @@ public class logInController {
                 FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("vanzareGUI.fxml"));
                 root = loader.load();
                 vanzareGUIController vgc = loader.getController();
-                VanzatorService.initDatabase();
+                //VanzatorService.initDatabase();
                 vgc.getSeller(VanzatorService.getVanzator(usernameField.getText()));
                 stage = (Stage)((Node)e.getSource()).getScene().getWindow();
                 scene = new Scene(root);

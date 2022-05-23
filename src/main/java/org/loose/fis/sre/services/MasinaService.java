@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static org.loose.fis.sre.services.FileSystemService.getPathToFile2;
+import java.util.List;
 
 public class MasinaService {
 
@@ -73,5 +73,9 @@ public class MasinaService {
                 break;
             }
         }
+    }
+
+    public static List<Masina> getAllCars(){
+        return masinaRepository.find().toList();
     }
 }

@@ -83,7 +83,7 @@ public class cumparareGUIController implements Initializable {
         myImages[5] = new Image(getClass().getClassLoader().getResource("bmw.jpg").toString(), true);
         myImages[6] = new Image(getClass().getClassLoader().getResource("volkswagen.jpg").toString(), true);
         imagine.setImage(myImages[i]);*/
-        MasinaService.initDatabase();
+        //MasinaService.initDatabase();
         //MasinaService.initializare();
         ArrayList<String> car = MasinaService.returnareObiecte();
         myListView.getItems().addAll(car);
